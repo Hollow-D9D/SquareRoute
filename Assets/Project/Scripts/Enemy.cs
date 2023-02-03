@@ -1,14 +1,17 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+namespace Project.Scripts
 {
-	private int value;
-
-	private void OnTriggerStay2D(Collider2D col)
+	public class Enemy : MonoBehaviour
 	{
-		if (Input.GetMouseButtonDown(1))
+		private int value;
+
+		private void OnTriggerStay2D(Collider2D col)
 		{
-			Destroy(gameObject);
+			if (Input.GetMouseButtonDown(1))
+			{
+				Destroy(gameObject);
+			}
 		}
 	}
 }

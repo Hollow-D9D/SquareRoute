@@ -11,20 +11,15 @@ namespace Project.Scripts
 
 		private void Start() => SL.GetSingle(out playerHealth);
 
-		private void OnTriggerStay2D(Collider2D col)
+		private void OnTriggerEnter2D(Collider2D col)
 		{
-			if (Input.GetMouseButtonDown(1))
+			if (Random.Range(0, 2) == 1)
 			{
-				if (Random.Range(0, 2) == 1)
-				{
-					playerHealth.TakeDamage();
-					Debug.Log(false);
-				}
-				else
-					Debug.Log(true);
-
-				Destroy(gameObject);
+				playerHealth.TakeDamage();
+				Debug.Log(false);
 			}
+			Destroy(gameObject);
+			
 		}
 	}
 }

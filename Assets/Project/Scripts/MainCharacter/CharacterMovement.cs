@@ -37,9 +37,13 @@ public class CharacterMovement : MonoBehaviour
         //movement
         _dir = Input.GetAxis("Horizontal");
         if (_dir > 0)
+        {
             _rb.velocity = new Vector2(_dir * speed, _rb.velocity.y);
+        }
         else if (0 > _dir)
+        {
             _rb.velocity = new Vector2(_dir * speed, _rb.velocity.y);
+        }
         else
             _rb.velocity = new Vector2(0, _rb.velocity.y);
 

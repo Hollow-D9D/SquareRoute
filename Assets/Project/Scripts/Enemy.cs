@@ -13,13 +13,16 @@ namespace Project.Scripts
 
 		private void OnTriggerEnter2D(Collider2D col)
 		{
-			if (Random.Range(0, 2) == 1)
+			if (col.tag == "Player")
 			{
-				playerHealth.TakeDamage();
-				Debug.Log(false);
+
+				if (Random.Range(0, 2) == 1)
+				{
+					playerHealth.TakeDamage();
+					Debug.Log(false);
+				}
+				Destroy(gameObject);
 			}
-			Destroy(gameObject);
-			
 		}
 	}
 }

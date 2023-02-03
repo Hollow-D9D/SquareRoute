@@ -4,12 +4,19 @@ namespace Project.Scripts
 {
 	public class PlayerShooting : MonoBehaviour
 	{
+
+		#region Fields
+		
 		[SerializeField] private Transform bulletSpawn;
 		[SerializeField] private GameObject bulletPrefab;
 		private Vector3 mousePosition;
 		private Vector3 lookVector;
 		private GameObject bulletInstance;
-		
+
+		#endregion
+
+		#region Unity Lifecycle
+
 		private void Update()
 		{
 			mousePosition.x = Input.mousePosition.x;
@@ -22,5 +29,7 @@ namespace Project.Scripts
 				bulletInstance.transform.right = lookVector;
 			}
 		}
+
+		#endregion
 	}
 }

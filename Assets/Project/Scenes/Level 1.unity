@@ -215,7 +215,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65ffe664072f3904784f67c7895700d1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthIcons: []
+  healthIcons:
+  - {fileID: 1546609332}
+  - {fileID: 1080894876}
+  - {fileID: 431390295}
 --- !u!1001 &89286533
 PrefabInstance:
   m_ObjectHideFlags: 0

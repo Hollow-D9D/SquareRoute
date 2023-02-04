@@ -5,8 +5,12 @@ namespace Project.Scripts.Player
 {
 	public class PlayerHealth : MonoBehaviour, IService
 	{
-		private int healthCount = 2;
+		#region Fields
+
 		[SerializeField] private GameObject[] healthIcons;
+		private int healthCount = 2;
+
+		#endregion
 
 		private void Awake() => SL.AddSingle(this, SetMode.Force);
 

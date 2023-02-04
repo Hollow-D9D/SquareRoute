@@ -43,6 +43,17 @@ public class MovingObject : MonoBehaviour
 			VerticalMove();
 	}
 
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+		collision.transform.SetParent(transform);
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+		collision.transform.parent = null;
+
+	}
+
 	private void VerticalMove()
 	{
 		if (currentDirection == Direction.Down)

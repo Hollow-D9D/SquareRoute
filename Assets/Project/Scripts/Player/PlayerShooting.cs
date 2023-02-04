@@ -17,16 +17,16 @@ namespace Project.Scripts.Player
 		private Vector3 mousePosition;
 		private Vector3 lookVector;
 		private GameObject bulletInstance;
-		
+
 		#endregion
 
 		public ShootState ShootState => shootState;
 
 		public event Action<ShootState> OnShootStateChange;
-		
+
 		#region Unity Lifecycle
 
-		private void Awake() => SL.AddSingle(this);
+		private void Awake() => SL.AddSingle(this, SetMode.Force);
 
 		private void Start() => camera = Camera.main;
 

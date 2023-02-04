@@ -1,3 +1,4 @@
+using System;
 using General;
 using UnityEngine;
 
@@ -12,6 +13,8 @@ namespace Project.Scripts.Player
 
 		#endregion
 
+		public event Action OnLost;
+		
 		private void Awake() => SL.AddSingle(this, SetMode.Force);
 
 		public void TakeDamage()
@@ -19,9 +22,8 @@ namespace Project.Scripts.Player
 			healthIcons[healthCount].SetActive(false);
 			healthCount--;
 			if (healthCount < 0)
-			{
-				Debug.Log("Lost");
-			}
+				OnLost?.Invoke();
+			
 		}
 	}
 }

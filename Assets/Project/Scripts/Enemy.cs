@@ -6,19 +6,40 @@ namespace Project.Scripts
 {
 	public class Enemy : MonoBehaviour
 	{
+
+		#region MyRegion
+
+		[SerializeField] private int value;
 		private PlayerHealth playerHealth;
-		private int value;
+		private float sqrt;
+
+		#endregion
+
+		#region Unity Lifecycle
 
 		private void Start() => SL.GetSingle(out playerHealth);
 
 		private void OnTriggerEnter2D(Collider2D col)
 		{
-			if (!col.CompareTag("Player")) return;
-			if (Random.Range(0, 2) == 1)
+			if (col.GetComponent<CharacterMovement>())
 			{
-				playerHealth.TakeDamage();
+				sqrt = Mathf.Sqrt(value);
+				if (sqrt == (int)sqrt)
+				{
+					//TODO score logic
+				}
+				else
+				{
+					playerHealth.TakeDamage();
+				}
+
+				Destroy(gameObject);
 			}
-			Destroy(gameObject);
+			else
+				value--;
+
 		}
+
+		#endregion
 	}
 }

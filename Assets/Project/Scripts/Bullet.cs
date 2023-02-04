@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace Project.Scripts
 {
-	[RequireComponent(typeof(Rigidbody2D))]
 	public class Bullet : MonoBehaviour
 	{
 		#region Fields
@@ -20,6 +19,7 @@ namespace Project.Scripts
 		private void Start()
 		{
 			SL.GetSingle(out playerShooting);
+			transform.rotation = Quaternion.Euler(0,transform.rotation.y,transform.rotation.z);
 			rigidbody2D.AddRelativeForce(forcePower, ForceMode2D.Impulse);
 			Destroy(gameObject,5);
 		}

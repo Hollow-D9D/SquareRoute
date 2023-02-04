@@ -17,7 +17,7 @@ namespace Project.Scripts.Player
 		private Vector3 mousePosition;
 		private Vector3 lookVector;
 		private GameObject bulletInstance;
-
+		
 		#endregion
 
 		public ShootState ShootState => shootState;

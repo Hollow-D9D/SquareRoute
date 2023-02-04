@@ -14,7 +14,7 @@ public enum MovementType
 	Vetrtical
 }
 
-public class MovingPlatform : MonoBehaviour
+public class MovingObject : MonoBehaviour
 {
 	[SerializeField] private Transform point1;
 	[SerializeField] private Transform point2;
@@ -53,13 +53,8 @@ public class MovingPlatform : MonoBehaviour
 			{
 				currentDirection = Direction.Up;
 				isStopped = true;
-				t = 0;
-				while (t < stopTime)
-				{
-					t += Time.deltaTime;
-				}
+				Invoke("ContinueWalk",stopTime);
 
-				ContinueWalk();
 			}
 		}
 		else
@@ -70,13 +65,7 @@ public class MovingPlatform : MonoBehaviour
 			{
 				currentDirection = Direction.Down;
 				isStopped = true;
-				t = 0;
-				while (t < stopTime)
-				{
-					t += Time.deltaTime;
-				}
-
-				ContinueWalk();
+				Invoke("ContinueWalk", stopTime);
 			}
 		}
 	}
@@ -91,13 +80,8 @@ public class MovingPlatform : MonoBehaviour
 			{
 				currentDirection = Direction.Right;
 				isStopped = true;
-				t = 0;
-				while (t < stopTime)
-				{
-					t += Time.deltaTime;
-				}
 
-				ContinueWalk();
+				Invoke("ContinueWalk", stopTime);
 			}
 		}
 		else
@@ -108,13 +92,8 @@ public class MovingPlatform : MonoBehaviour
 			{
 				currentDirection = Direction.Left;
 				isStopped = true;
-				t = 0;
-				while (t < stopTime)
-				{
-					t += Time.deltaTime;
-				}
 
-				ContinueWalk();
+				Invoke("ContinueWalk", stopTime);
 			}
 		}
 	}

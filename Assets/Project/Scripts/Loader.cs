@@ -6,5 +6,5 @@ public class Loader : MonoBehaviour
 {
 	[SerializeField] private Button startButton;
 	private void Start() 
-		=> startButton.onClick.AddListener(()=>SceneManager.LoadScene("Level 1"));
+		=> startButton.onClick.AddListener(()=>SceneManager.LoadScene("TEST"));
 }

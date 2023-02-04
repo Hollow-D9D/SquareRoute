@@ -21,6 +21,7 @@ namespace Project.Scripts
 		{
 			SL.GetSingle(out playerShooting);
 			rigidbody2D.AddRelativeForce(forcePower, ForceMode2D.Impulse);
+			Destroy(gameObject,5);
 		}
 
 		private void OnCollisionEnter2D(Collision2D col)

@@ -61,7 +61,8 @@ namespace Project.Scripts
 			while (true)
 			{
 				yield return null;
-				spriteRenderer.color = ValueGetSqrt() ? Color.blue : Color.red;
+				spriteRenderer.color = ValueGetSqrt() ? Color.white : Color.black;
+				valueText.color = !ValueGetSqrt() ? Color.white : Color.black;
 			}
 		}
 
